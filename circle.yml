@@ -3,19 +3,11 @@ machine:
     version: oraclejdk8
 
 deployment:
-  patch:
-    branch: /patch_.*/
-    commands:
-      -  mvn deploy
-  feature:
-    branch: /feature_.*/
+  develop:
+    tag: /v[0-9]+(\.[0-9]+)*-SNAPSHOT/
     commands:
       -  mvn deploy
   release:
-    branch: /release_.*/
-    commands:
-      -  mvn deploy
-  develop:
-    branch: develop
+    tag: /v[0-9]+(\.[0-9]+)*/
     commands:
       -  mvn deploy
