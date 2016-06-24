@@ -7,7 +7,11 @@ deployment:
     branch: develop
     commands:
       -  mvn deploy
+  qa:
+    tag: /v[0-9]+(\.[0-9]+)*-rc[0-9]+(\.[0-9]+)*/ # v1.2.3-rc1.1.2.3
+    commands:
+      -  mvn deploy
   release:
-    tag: /[0-9]+(\.[0-9]+)*/
+    tag: /v[0-9]+(\.[0-9]+)*/ # v1.2.3
     commands:
       -  mvn deploy
