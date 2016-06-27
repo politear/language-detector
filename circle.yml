@@ -1,0 +1,9 @@
+machine:
+  java:
+    version: oraclejdk8
+
+deployment:
+  publish:
+    branch: [/develop/, /release_.*/]
+    commands:
+      -  mvn deploy
